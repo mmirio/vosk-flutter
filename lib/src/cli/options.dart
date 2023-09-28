@@ -1,5 +1,5 @@
 import 'package:build_cli_annotations/build_cli_annotations.dart';
-import 'package:vosk_flutter/src/cli/target_os_type.dart';
+import 'package:vosk_flutter_2/src/cli/target_os_type.dart';
 
 part 'options.g.dart';
 

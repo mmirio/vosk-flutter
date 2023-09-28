@@ -8,8 +8,8 @@ import 'package:args/command_runner.dart';
 import 'package:package_config/package_config.dart';
 import 'package:path/path.dart' as path;
 import 'package:pubspec_parse/pubspec_parse.dart';
-import 'package:vosk_flutter/src/cli/options.dart';
-import 'package:vosk_flutter/src/cli/target_os_type.dart';
+import 'package:vosk_flutter_2/src/cli/options.dart';
+import 'package:vosk_flutter_2/src/cli/target_os_type.dart';
 
 void main(List<String> arguments) {
   CommandRunner<void>(

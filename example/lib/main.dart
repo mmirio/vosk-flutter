@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:record/record.dart';
-import 'package:vosk_flutter/vosk_flutter.dart';
-import 'package:vosk_flutter_example/test_screen.dart';
+import 'package:vosk_flutter_2/vosk_flutter.dart';
+import 'package:vosk_flutter_2_example/test_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:flutter/services.dart';
-import 'package:vosk_flutter/src/generated_vosk_bindings.dart';
-import 'package:vosk_flutter/src/vosk_flutter.dart';
+import 'package:vosk_flutter_2/src/generated_vosk_bindings.dart';
+import 'package:vosk_flutter_2/src/vosk_flutter_2.dart';
 
 /// Class representing the language model loaded by the plugin.
 class Model {

@@ -4,9 +4,9 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart';
 import 'package:flutter/services.dart';
-import 'package:vosk_flutter/src/generated_vosk_bindings.dart';
-import 'package:vosk_flutter/src/utils.dart';
-import 'package:vosk_flutter/vosk_flutter.dart';
+import 'package:vosk_flutter_2/src/generated_vosk_bindings.dart';
+import 'package:vosk_flutter_2/src/utils.dart';
+import 'package:vosk_flutter_2/vosk_flutter_2.dart';
 
 /// Class representing the recognizer created by the plugin.
 class Recognizer {
