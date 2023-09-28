@@ -9,8 +9,8 @@ Flutter plugin for Vosk speech recognition.
 ## Platform Support
 
 | Android | iOS | MacOS | Web | Linux | Windows |
-| :-----: | :-: | :---: | :-: | :---: | :----: |
-|   ✔    | ➖   |  ➖   | ➖   |  ✔   |    ✔   |
+| :-----: | :-: | :---: | :-: | :---: | :-----: |
+|    ✔    | ➖  |  ➖   | ➖  |  ➖   |   ➖    |
 
 ## Usage
 
@@ -19,24 +19,28 @@ Flutter plugin for Vosk speech recognition.
 Follow the instruction at the [Installing page of the package](https://pub.dev/packages/vosk_flutter/install).
 
 #### Android
+
 Add this pro guard rules in `android/app/proguard-rules.pro`(if the file does not exist - create it):
+
 ```properties
 -keep class com.sun.jna.* { *; }
 -keepclassmembers class * extends com.sun.jna.* { public *; }
 ```
 
 If you want to use a microphone input, add the microphone permission to your `AndroidManifest.xml`:
+
 ```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
 ### Load model
+
 ```yaml
 flutter:
   assets:
     - assets/models/
-
 ```
+
 ```dart
 final vosk = VoskFlutterPlugin.instance();
 final enSmallModelPath = await ModelLoader()
@@ -44,6 +48,7 @@ final enSmallModelPath = await ModelLoader()
 ```
 
 ### Create recognizer
+
 ```dart
 final recognizer = await vosk.createRecognizer(
     model: model,
@@ -57,6 +62,7 @@ final recognizerWithGrammar = await vosk.createRecognizer(
 ```
 
 ### Recognize audio data
+
 ```dart
 Uint8List audioBytes = ...; // audio data in PCM 16-bit mono format
 List<String> results = [];
@@ -67,7 +73,7 @@ while (pos + chunkSize < audioBytes.length) {
     final resultReady = await recognizer.acceptWaveformBytes(
       Uint8List.fromList(audioBytes.getRange(pos, pos + chunkSize).toList()));
     pos += chunkSize;
-    
+
     if (resultReady) {
       print(await recognizer.getResult());
     } else {
@@ -80,12 +86,12 @@ print(await recognizer.getFinalResult());
 ```
 
 ### Recognize microphone data
+
 #### Android
+
 ```dart
 final speechService = await vosk.initSpeechService(recognizer);
 speechService.onPartial().forEach((partial) => print(partial));
 speechService.onResult().forEach((result) => print(result));
 await speechService.start();
 ```
-#### Linux & Windows
-Use any suitable plugin to get the microphone input and [pass it to a recognizer](#recognize-audio-data)
