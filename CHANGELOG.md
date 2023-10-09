@@ -1,3 +1,23 @@
+## 1.0.5
+
+- Fixed versioning issue
+
+## 1.0.4
+
+- Fixed versioning issue
+
+## 1.0.3
+
+- Fixed versioning issue
+
+## 1.0.2
+
+- Fixed versioning issue
+
+## 1.0.1
+
+- Fixed versioning issue
+
 ## 1.0.0
 
 - Added support for android 10+
